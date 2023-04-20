@@ -113,9 +113,8 @@ class Connection implements LoggerAwareInterface
     public function pullMessage(): Message
     {
         // non-blocking way to wait for stream to change
-        $x = [$this->stream];
-        $null = null;
-        while (!stream_select($x, $null, $null, 1, 0)) {
+        $read = [$this->stream];
+        while (!stream_select($read, null, null, 1, 0)) {
         }
 
         do {
