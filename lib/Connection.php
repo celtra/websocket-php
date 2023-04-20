@@ -112,6 +112,12 @@ class Connection implements LoggerAwareInterface
     // Pull a message from stream
     public function pullMessage(): Message
     {
+        // non-blocking way to wait for stream to change
+        $x = [$this->stream];
+        $null = null;
+        while (!stream_select($x, $null, $null, 1, 0)) {
+        }
+
         do {
             $frame = $this->pullFrame();
             $frame = $this->autoRespond($frame);

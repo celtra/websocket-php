@@ -17,6 +17,14 @@
         "return": "@mock-stream"
     },
     {
+        "function": "stream_set_blocking",
+        "params": [
+            "@mock-stream",
+            false
+        ],
+        "return": "@mock-stream"
+    },
+    {
         "function": "get_resource_type",
         "params": [
             "@mock-stream"
@@ -38,7 +46,7 @@
             "GET /my/mock/path HTTP/1.1\r\nHost: localhost:443\r\nUser-Agent: websocket-client-php\r\nConnection: Upgrade\r\nUpgrade: websocket\r\nSec-WebSocket-Key: {key}\r\nSec-WebSocket-Version: 13\r\n\r\n"
         ],
         "input-op": "key-save",
-        "return": 198
+        "return": 224
     },
     {
         "function": "fgets",

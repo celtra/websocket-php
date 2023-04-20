@@ -35,6 +35,17 @@
         "return": "stream"
     },
     {
+        "function": "stream_select",
+        "params": [
+            ["@mock-stream"],
+            null,
+            null,
+            1,
+            0
+        ],
+        "return": 1
+    },
+    {
         "function": "fread",
         "params": [
             "@mock-stream",
@@ -62,6 +73,17 @@
         "return": [82, 100, 115, 119, 100, 115, 33, 113, 104, 111, 102]
     },
     {
+        "function": "stream_select",
+        "params": [
+            ["@mock-stream"],
+            null,
+            null,
+            1,
+            0
+        ],
+        "return": 1
+    },
+    {
         "function": "fread",
         "params": [
             "@mock-stream",
@@ -78,6 +100,17 @@
         ],
         "return-op": "chr-array",
         "return": [1, 1, 1, 1]
+    },
+    {
+        "function": "stream_select",
+        "params": [
+            ["@mock-stream"],
+            null,
+            null,
+            1,
+            0
+        ],
+        "return": 1
     },
     {
         "function": "fread",
@@ -112,6 +145,17 @@
             "@mock-stream"
         ],
         "return": 13
+    },
+    {
+        "function": "stream_select",
+        "params": [
+            ["@mock-stream"],
+            null,
+            null,
+            1,
+            0
+        ],
+        "return": 1
     },
     {
         "function": "fread",

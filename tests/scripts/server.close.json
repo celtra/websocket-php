@@ -17,7 +17,18 @@
     {
         "function": "fwrite",
         "params": [],
-        "return": 8
+        "return":12
+    },
+    {
+        "function": "stream_select",
+        "params": [
+            ["@mock-stream"],
+            null,
+            null,
+            1,
+            0
+        ],
+        "return": 1
     },
     {
         "function": "fread",

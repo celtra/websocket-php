@@ -31,6 +31,14 @@
         "return": "@mock-stream"
     },
     {
+        "function": "stream_set_blocking",
+        "params": [
+            "@mock-stream",
+            false
+        ],
+        "return": "@mock-stream"
+    },
+    {
         "function": "get_resource_type",
         "params": [
             "@mock-stream"
@@ -61,6 +69,17 @@
         ],
         "return-op": "key-respond",
         "return": "HTTP\/1.1 101 Switching Protocols\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: {key}\r\n\r\n"
+    },
+    {
+        "function": "stream_select",
+        "params": [
+            ["@mock-stream"],
+            null,
+            null,
+            1,
+            0
+        ],
+        "return": 1
     },
     {
         "function": "fread",
