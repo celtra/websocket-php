@@ -109,8 +109,7 @@ class Connection implements LoggerAwareInterface
         ]);
     }
 
-    // Pull a message from stream
-    public function pullMessage(): Message
+    private function waitForMessage(): void
     {
         // non-blocking way to wait for stream to change
         $read = [$this->stream];
@@ -120,6 +119,12 @@ class Connection implements LoggerAwareInterface
             while (!stream_select($read, null, null, 1, 0)) {
             }
         }
+    }
+
+    // Pull a message from stream
+    public function pullMessage(): Message
+    {
+        $this->waitForMessage();
 
         do {
             $frame = $this->pullFrame();
