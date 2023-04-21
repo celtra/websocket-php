@@ -12,7 +12,7 @@
             ["@mock-stream"],
             null,
             null,
-            1,
+            9223372036854775807,
             0
         ],
         "return": 1
@@ -86,7 +86,7 @@
             ["@mock-stream"],
             null,
             null,
-            1,
+            9223372036854775807,
             0
         ],
         "return": 1

@@ -113,12 +113,7 @@ class Connection implements LoggerAwareInterface
     {
         // non-blocking way to wait for stream to change
         $read = [$this->stream];
-        if (isset($this->options['timeout'])) {
-            stream_select($read, null, null, $this->options['timeout'], 0);
-        } else {
-            while (!stream_select($read, null, null, 1, 0)) {
-            }
-        }
+        stream_select($read, null, null, $this->options['timeout'] ?? PHP_INT_MAX, 0);
     }
 
     // Pull a message from stream
