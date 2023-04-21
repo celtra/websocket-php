@@ -41,6 +41,17 @@
         "return": [129, 127]
     },
     {
+        "function": "stream_select",
+        "params": [
+            ["@mock-stream"],
+            null,
+            null,
+            5,
+            0
+        ],
+        "return": 1
+    },
+    {
         "function": "fread",
         "params": [
             "@mock-stream",
@@ -48,6 +59,17 @@
         ],
         "return-op": "chr-array",
         "return": [0, 0, 0, 0, 0, 1, 0, 0]
+    },
+    {
+        "function": "stream_select",
+        "params": [
+            ["@mock-stream"],
+            null,
+            null,
+            5,
+            0
+        ],
+        "return": 1
     },
     {
         "function": "fread",
@@ -59,6 +81,17 @@
         "return": ["payload.65536.txt", 0, 16374]
     },
     {
+        "function": "stream_select",
+        "params": [
+            ["@mock-stream"],
+            null,
+            null,
+            5,
+            0
+        ],
+        "return": 1
+    },
+    {
         "function": "fread",
         "params": [
             "@mock-stream",
@@ -66,6 +99,17 @@
         ],
         "return-op": "file",
         "return": ["payload.65536.txt", 16374, 8192]
+    },
+    {
+        "function": "stream_select",
+        "params": [
+            ["@mock-stream"],
+            null,
+            null,
+            5,
+            0
+        ],
+        "return": 1
     },
     {
         "function": "fread",
@@ -77,6 +121,17 @@
         "return": ["payload.65536.txt", 24566, 8192]
     },
     {
+        "function": "stream_select",
+        "params": [
+            ["@mock-stream"],
+            null,
+            null,
+            5,
+            0
+        ],
+        "return": 1
+    },
+    {
         "function": "fread",
         "params": [
             "@mock-stream",
@@ -84,6 +139,17 @@
         ],
         "return-op": "file",
         "return": ["payload.65536.txt", 32758, 8192]
+    },
+    {
+        "function": "stream_select",
+        "params": [
+            ["@mock-stream"],
+            null,
+            null,
+            5,
+            0
+        ],
+        "return": 1
     },
     {
         "function": "fread",
@@ -95,6 +161,17 @@
         "return": ["payload.65536.txt", 40950, 8192]
     },
     {
+        "function": "stream_select",
+        "params": [
+            ["@mock-stream"],
+            null,
+            null,
+            5,
+            0
+        ],
+        "return": 1
+    },
+    {
         "function": "fread",
         "params": [
             "@mock-stream",
@@ -104,6 +181,17 @@
         "return": ["payload.65536.txt", 49142, 8192]
     },
     {
+        "function": "stream_select",
+        "params": [
+            ["@mock-stream"],
+            null,
+            null,
+            5,
+            0
+        ],
+        "return": 1
+    },
+    {
         "function": "fread",
         "params": [
             "@mock-stream",
@@ -111,6 +199,17 @@
         ],
         "return-op": "file",
         "return": ["payload.65536.txt", 57334, 8192]
+    },
+    {
+        "function": "stream_select",
+        "params": [
+            ["@mock-stream"],
+            null,
+            null,
+            5,
+            0
+        ],
+        "return": 1
     },
     {
         "function": "fread",

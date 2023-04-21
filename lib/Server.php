@@ -404,6 +404,7 @@ class Server implements LoggerAwareInterface
                 if (!$socket) {
                     throw new ErrorException('No socket');
                 }
+                stream_set_blocking($socket, false);
                 return $socket;
             });
         } catch (ErrorException $e) {

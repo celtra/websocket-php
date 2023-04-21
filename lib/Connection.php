@@ -109,7 +109,7 @@ class Connection implements LoggerAwareInterface
         ]);
     }
 
-    private function waitForMessage(): void
+    private function waitForStream(): void
     {
         // non-blocking way to wait for stream to change
         $read = [$this->stream];
@@ -119,8 +119,6 @@ class Connection implements LoggerAwareInterface
     // Pull a message from stream
     public function pullMessage(): Message
     {
-        $this->waitForMessage();
-
         do {
             $frame = $this->pullFrame();
             $frame = $this->autoRespond($frame);
@@ -447,6 +445,7 @@ class Connection implements LoggerAwareInterface
      */
     public function gets(int $length): string
     {
+        $this->waitForStream();
         $line = fgets($this->stream, $length);
         if ($line === false) {
             $this->throwException('Could not read from stream');
@@ -465,6 +464,7 @@ class Connection implements LoggerAwareInterface
     {
         $data = '';
         while (strlen($data) < $length) {
+            $this->waitForStream();
             $buffer = fread($this->stream, $length - strlen($data));
             if (!$buffer) {
                 $meta = stream_get_meta_data($this->stream);

@@ -41,6 +41,17 @@
         "return": [129, 126]
     },
     {
+        "function": "stream_select",
+        "params": [
+            ["@mock-stream"],
+            null,
+            null,
+            9223372036854775807,
+            0
+        ],
+        "return": 1
+    },
+    {
         "function": "fread",
         "params": [
             "@mock-stream",
@@ -48,6 +59,17 @@
         ],
         "return-op": "chr-array",
         "return": [0, 128]
+    },
+    {
+        "function": "stream_select",
+        "params": [
+            ["@mock-stream"],
+            null,
+            null,
+            9223372036854775807,
+            0
+        ],
+        "return": 1
     },
     {
         "function": "fread",

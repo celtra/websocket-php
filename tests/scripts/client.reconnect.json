@@ -62,6 +62,17 @@
         "return": 199
     },
     {
+        "function": "stream_select",
+        "params": [
+            ["@mock-stream"],
+            null,
+            null,
+            5,
+            0
+        ],
+        "return": 1
+    },
+    {
         "function": "fgets",
         "params": [
             "@mock-stream",
@@ -91,6 +102,17 @@
         "return": [129, 147]
     },
     {
+        "function": "stream_select",
+        "params": [
+            ["@mock-stream"],
+            null,
+            null,
+            5,
+            0
+        ],
+        "return": 1
+    },
+    {
         "function": "fread",
         "params": [
             "@mock-stream",
@@ -98,6 +120,17 @@
         ],
         "return-op": "chr-array",
         "return": [33, 111, 149, 174]
+    },
+    {
+        "function": "stream_select",
+        "params": [
+            ["@mock-stream"],
+            null,
+            null,
+            5,
+            0
+        ],
+        "return": 1
     },
     {
         "function": "fread",

@@ -48,6 +48,17 @@
         "return": 246
     },
     {
+        "function": "stream_select",
+        "params": [
+            ["@mock-stream"],
+            null,
+            null,
+            5,
+            0
+        ],
+        "return": 1
+    },
+    {
         "function": "fgets",
         "params": [
             "@mock-stream",
