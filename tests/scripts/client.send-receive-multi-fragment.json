@@ -34,7 +34,7 @@
             ["@mock-stream"],
             null,
             null,
-            1,
+            5,
             0
         ],
         "return": 1

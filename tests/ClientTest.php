@@ -394,7 +394,7 @@ class ClientTest extends TestCase
         MockSocket::initialize('client.connect', $this);
         $client = new Client('ws://localhost:8000/my/mock/path');
         $client->send('Connect');
-        MockSocket::initialize('receive-bad-opcode', $this);
+        MockSocket::initialize('client.receive-bad-opcode', $this);
         $this->expectException('WebSocket\ConnectionException');
         $this->expectExceptionCode(1026);
         $this->expectExceptionMessage('Bad opcode in websocket frame: 12');
@@ -430,7 +430,7 @@ class ClientTest extends TestCase
         MockSocket::initialize('client.connect', $this);
         $client = new Client('ws://localhost:8000/my/mock/path');
         $client->send('Connect');
-        MockSocket::initialize('receive-broken-read', $this);
+        MockSocket::initialize('client.receive-broken-read', $this);
         $this->expectException('WebSocket\ConnectionException');
         $this->expectExceptionCode(1025);
         $this->expectExceptionMessage('Broken frame, read 0 of stated 2 bytes.');
@@ -452,7 +452,7 @@ class ClientTest extends TestCase
         MockSocket::initialize('client.connect', $this);
         $client = new Client('ws://localhost:8000/my/mock/path');
         $client->send('Connect');
-        MockSocket::initialize('receive-client-timeout', $this);
+        MockSocket::initialize('client.receive-client-timeout', $this);
         $this->expectException('WebSocket\TimeoutException');
         $this->expectExceptionCode(1024);
         $this->expectExceptionMessage('Client read timeout');
@@ -464,7 +464,7 @@ class ClientTest extends TestCase
         MockSocket::initialize('client.connect', $this);
         $client = new Client('ws://localhost:8000/my/mock/path');
         $client->send('Connect');
-        MockSocket::initialize('receive-empty-read', $this);
+        MockSocket::initialize('client.receive-empty-read', $this);
         $this->expectException('WebSocket\TimeoutException');
         $this->expectExceptionCode(1024);
         $this->expectExceptionMessage('Empty read; connection dead?');
@@ -479,7 +479,7 @@ class ClientTest extends TestCase
             ['filter' => ['text', 'binary', 'pong', 'close']]
         );
         $client->send('Connect');
-        MockSocket::initialize('receive-fragmentation', $this);
+        MockSocket::initialize('client.receive-fragmentation', $this);
         $message = $client->receive();
         $this->assertEquals('Server ping', $message);
         $this->assertEquals('pong', $client->getLastOpcode());
@@ -504,7 +504,7 @@ class ClientTest extends TestCase
             ['filter' => ['text', 'binary', 'pong', 'close'], 'return_obj' => true]
         );
         $client->send('Connect');
-        MockSocket::initialize('receive-fragmentation', $this);
+        MockSocket::initialize('client.receive-fragmentation', $this);
         $message = $client->receive();
         $this->assertInstanceOf('WebSocket\Message\Message', $message);
         $this->assertInstanceOf('WebSocket\Message\Pong', $message);

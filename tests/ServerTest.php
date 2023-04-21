@@ -313,7 +313,7 @@ class ServerTest extends TestCase
         MockSocket::initialize('server.accept', $this);
         $server->accept();
         $server->send('Connect');
-        MockSocket::initialize('receive-bad-opcode', $this);
+        MockSocket::initialize('server.receive-bad-opcode', $this);
         $this->expectException('WebSocket\ConnectionException');
         $this->expectExceptionCode(1026);
         $this->expectExceptionMessage('Bad opcode in websocket frame: 12');
@@ -355,7 +355,7 @@ class ServerTest extends TestCase
         MockSocket::initialize('server.accept', $this);
         $server->accept();
         $server->send('Connect');
-        MockSocket::initialize('receive-broken-read', $this);
+        MockSocket::initialize('server.receive-broken-read', $this);
         $this->expectException('WebSocket\ConnectionException');
         $this->expectExceptionCode(1025);
         $this->expectExceptionMessage('Broken frame, read 0 of stated 2 bytes.');
@@ -369,7 +369,7 @@ class ServerTest extends TestCase
         MockSocket::initialize('server.accept', $this);
         $server->accept();
         $server->send('Connect');
-        MockSocket::initialize('receive-empty-read', $this);
+        MockSocket::initialize('server.receive-empty-read', $this);
         $this->expectException('WebSocket\TimeoutException');
         $this->expectExceptionCode(1024);
         $this->expectExceptionMessage('Empty read; connection dead?');
@@ -383,7 +383,7 @@ class ServerTest extends TestCase
         MockSocket::initialize('server.accept', $this);
         $server->accept();
         $server->send('Connect');
-        MockSocket::initialize('receive-fragmentation', $this);
+        MockSocket::initialize('server.receive-fragmentation', $this);
         $message = $server->receive();
         $this->assertEquals('Server ping', $message);
         $this->assertEquals('pong', $server->getLastOpcode());
@@ -407,7 +407,7 @@ class ServerTest extends TestCase
         MockSocket::initialize('server.accept', $this);
         $server->accept();
         $server->send('Connect');
-        MockSocket::initialize('receive-fragmentation', $this);
+        MockSocket::initialize('server.receive-fragmentation', $this);
         $message = $server->receive();
         $this->assertInstanceOf('WebSocket\Message\Message', $message);
         $this->assertInstanceOf('WebSocket\Message\Pong', $message);
