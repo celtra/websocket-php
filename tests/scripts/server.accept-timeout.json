@@ -8,14 +8,6 @@
         "return": "@mock-stream"
     },
     {
-        "function": "stream_set_blocking",
-        "params": [
-            "@mock-stream",
-            false
-        ],
-        "return": "@mock-stream"
-    },
-    {
         "function": "stream_set_timeout",
         "params": [
             "@mock-stream",

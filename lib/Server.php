@@ -75,6 +75,7 @@ class Server implements LoggerAwareInterface
 
         do {
             $this->listening = stream_socket_server("tcp://0.0.0.0:$this->port", $errno, $errstr);
+            stream_set_blocking($this->listening, false);
         } while ($this->listening === false && $this->port++ < 10000);
 
         restore_error_handler();
@@ -404,7 +405,6 @@ class Server implements LoggerAwareInterface
                 if (!$socket) {
                     throw new ErrorException('No socket');
                 }
-                stream_set_blocking($socket, false);
                 return $socket;
             });
         } catch (ErrorException $e) {

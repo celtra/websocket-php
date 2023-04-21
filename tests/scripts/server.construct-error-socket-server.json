@@ -13,6 +13,14 @@
         "return": false
     },
     {
+        "function": "stream_set_blocking",
+        "params": [
+            false,
+            false
+        ],
+        "return": false
+    },
+    {
         "function": "stream_socket_server",
         "params": [
             "tcp://0.0.0.0:10000",
@@ -23,6 +31,14 @@
             "msg": "A PHP error",
             "type": 512
         },
+        "return": false
+    },
+    {
+        "function": "stream_set_blocking",
+        "params": [
+            false,
+            false
+        ],
         "return": false
     }
 ]

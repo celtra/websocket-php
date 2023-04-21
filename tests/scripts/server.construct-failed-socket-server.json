@@ -9,11 +9,27 @@
         "return": false
     },
     {
+        "function": "stream_set_blocking",
+        "params": [
+            false,
+            false
+        ],
+        "return": false
+    },
+    {
         "function": "stream_socket_server",
         "params": [
             "tcp://0.0.0.0:10000",
             null,
             null
+        ],
+        "return": false
+    },
+    {
+        "function": "stream_set_blocking",
+        "params": [
+            false,
+            false
         ],
         "return": false
     }
