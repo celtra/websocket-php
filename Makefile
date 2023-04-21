@@ -6,7 +6,10 @@ update: composer.phar
 	./composer.phar update
 
 test: composer.lock
-	./vendor/bin/phpunit
+	./vendor/bin/phpunit --configuration phpunit.xml.dist
+
+integration-test: composer.lock
+	./vendor/bin/phpunit --configuration phpunit-integration.xml.dist
 
 cs-check: composer.lock
 	./vendor/bin/phpcs --standard=PSR1,PSR12 --encoding=UTF-8 --report=full --colors lib tests examples

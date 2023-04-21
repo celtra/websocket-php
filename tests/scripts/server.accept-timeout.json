@@ -23,6 +23,17 @@
         "return": "127.0.0.1:12345"
     },
     {
+        "function": "stream_select",
+        "params": [
+            ["@mock-stream"],
+            null,
+            null,
+            300,
+            0
+        ],
+        "return": 1
+    },
+    {
         "function": "stream_get_line",
         "params": [
             "@mock-stream",
@@ -52,6 +63,17 @@
             "@mock-stream"
         ],
         "return": false
+    },
+    {
+        "function": "stream_select",
+        "params": [
+            ["@mock-stream"],
+            null,
+            null,
+            300,
+            0
+        ],
+        "return": 1
     },
     {
         "function": "stream_get_line",
@@ -85,6 +107,17 @@
         "return": false
     },
     {
+        "function": "stream_select",
+        "params": [
+            ["@mock-stream"],
+            null,
+            null,
+            300,
+            0
+        ],
+        "return": 1
+    },
+    {
         "function": "stream_get_line",
         "params": [
             "@mock-stream",
@@ -114,6 +147,17 @@
             "@mock-stream"
         ],
         "return": false
+    },
+    {
+        "function": "stream_select",
+        "params": [
+            ["@mock-stream"],
+            null,
+            null,
+            300,
+            0
+        ],
+        "return": 1
     },
     {
         "function": "stream_get_line",
@@ -147,6 +191,17 @@
         "return": false
     },
     {
+        "function": "stream_select",
+        "params": [
+            ["@mock-stream"],
+            null,
+            null,
+            300,
+            0
+        ],
+        "return": 1
+    },
+    {
         "function": "stream_get_line",
         "params": [
             "@mock-stream",
@@ -176,6 +231,17 @@
             "@mock-stream"
         ],
         "return": false
+    },
+    {
+        "function": "stream_select",
+        "params": [
+            ["@mock-stream"],
+            null,
+            null,
+            300,
+            0
+        ],
+        "return": 1
     },
     {
         "function": "stream_get_line",
@@ -209,6 +275,17 @@
         "return": false
     },
     {
+        "function": "stream_select",
+        "params": [
+            ["@mock-stream"],
+            null,
+            null,
+            300,
+            0
+        ],
+        "return": 1
+    },
+    {
         "function": "stream_get_line",
         "params": [
             "@mock-stream",
@@ -240,6 +317,17 @@
         "return": false
     }
     ,
+    {
+        "function": "stream_select",
+        "params": [
+            ["@mock-stream"],
+            null,
+            null,
+            300,
+            0
+        ],
+        "return": 1
+    },
     {
         "function": "stream_get_line",
         "params": [

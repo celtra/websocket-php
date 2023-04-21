@@ -430,6 +430,7 @@ class Connection implements LoggerAwareInterface
      */
     public function getLine(int $length, string $ending): string
     {
+        $this->waitForStream();
         $line = stream_get_line($this->stream, $length, $ending);
         if ($line === false) {
             $this->throwException('Could not read from stream');
